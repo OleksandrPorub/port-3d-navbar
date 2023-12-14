@@ -1,0 +1,36 @@
+{
+    "todo": {
+        "h1": "Список задач",
+        "options": {
+            "select": {
+                "all": "ВСІ",
+                "completed": "ВИКОНАНІ",
+                "notcompleted": "НЕ ВИКОНАНІ"
+            },
+            "addFake_p1": "Додати фейкові задачі",
+            "addFake_p2": "із стороннього ресурсу",
+            "search": "пошук...",
+            "toolt-trash": "корзина",
+            "toolt-main": "до головного списку",
+            "placeholder": "нова задача...",
+            "prompt-query": "Скільки фейкових задач ви хотіли б завантажити?:",
+            "emptyTrash": "очистити",
+            "toolt-emptyTrash": "очистити корзину",
+            "confirm-q": "Ви хочете назавжди видалити усі задачі із корзини?",
+            "alert-phrase": "У корзині немає жодної задачі!"
+        },
+        "h2_main": "Актуальні",
+        "h2_trash": "Видалені",
+
+        "inputTask": {
+            "updated": "Змінено",
+            "toolt-input-compl": "виконано",
+            "toolt-input-notcompl": "не виконано",
+            "toolt-return": "повернути до актуальних",
+            "toolt-removeTo": "відправити до корзини",
+            "toolt-remove": "видалити назавжди",
+            "toolt-edit": "редагувати",
+            "toolt-save": "зберегти"
+        }
+    }
+}

@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700;900&display=swap');
+
+
+.pageBattleShip {
+    font-family: 'Roboto Slab', serif;
+    background-color: #c1b8ab;
+    background: linear-gradient(0deg, rgba(193, 184, 171, 0) 30%, rgba(196, 187, 174, 1) 100%);
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    h1 {
+        font-size: 2.1rem;
+        font-weight: 900;
+        display: block;
+        text-align: center;
+        text-transform: capitalize;
+        color: #a37f5a;
+        letter-spacing: 0.1em;
+        -webkit-text-stroke: 1.2px #624e3a;
+        text-shadow: 1px 1px 5px #000000;
+        margin: 8px 0;
+        z-index: 2;
+        transform-origin: center center;
+        animation: headLineTransform 3s linear 0s 1;
+    }
+}
+
+@keyframes headLineTransform {
+    0% {
+        transform: scale(0.6) translateY(250px);
+        z-index: 1;
+        text-shadow: 1px 1px 5px #000000;
+    }
+
+    15% {
+        transform: scale(0.8) translateY(60px);
+        z-index: 1;
+    }
+
+    30% {
+        transform: scale(1) translateY(15px);
+        z-index: 1;
+    }
+
+    40% {
+        transform: scale(1.6) translateY(40px);
+        z-index: 3;
+    }
+
+    55% {
+        transform: scale(2.1) translateY(90px);
+        z-index: 8;
+        text-shadow: 4px 4px 9px #000000;
+    }
+
+    70% {
+        transform: scale(2.1) translateY(90px);
+        z-index: 8;
+        text-shadow: 4px 4px 9px #000000;
+        letter-spacing: 0.05em;
+    }
+
+    80% {
+        transform: scale(1.6) translateY(60px);
+        z-index: 8;
+    }
+
+    100% {
+        transform: scale(1) translateY(0px);
+        z-index: 3;
+    }
+}
+
+.descriptionText {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #624e3a;
+    margin: 4px 0 10px 0;
+    line-height: 1em;
+    min-height: 1em;
+}
+
+.descriptionTextLine {
+    animation: letterBloom 0.6s linear 0s infinite;
+}
+
+@keyframes letterBloom {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.playboxWrap {
+    margin-top: 6px;
+    padding: 6px;
+    border-radius: 9px;
+    width: fit-content;
+    width: -moz-fit-content;
+    background: linear-gradient(90deg, rgba(52, 168, 83, 1) 4%, rgba(66, 133, 244, 1) 0%) top/100% 34% no-repeat,
+        linear-gradient(90deg, rgba(251, 188, 4, 1) 50%, rgba(66, 133, 244, 1) 0%) top/100% 82% no-repeat,
+        linear-gradient(90deg, rgba(251, 188, 4, 1) 10%, rgba(234, 67, 53, 1) 0%) top/100% 100%;
+    box-shadow: 2px 2px 20px 1px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.playbox {
+    background-color: rgba(224, 231, 238, 0.9);
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    width: 100%;
+    padding: 14px;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(224, 231, 238, 0.9);
+    box-shadow: 0px 0px 5px 2px rgba(224, 231, 238, 0.9);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.battleAreaWrap {
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.battleArea {
+    border-spacing: 1px;
+    border: 1px solid rgb(32, 32, 32);
+}
+
+.battleAreaWrap tr {
+    min-height: 30px;
+}
+
+.battleAreaWrap td {
+    min-width: 30px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.battleAreaWrap td.tdBattleArea {
+    background-color: rgb(168, 168, 168);
+}
+
+.battleArea tr {
+    height: 30px;
+    border: none;
+    padding: 0;
+}
+
+.battleArea td {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 30px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.battleAreaWrap tr:nth-child(1) td:not(.tdBattleArea td),
+.battleAreaWrap tr td:nth-child(1):not(.tdBattleArea td) {
+    color: rgb(77, 68, 59);
+    text-align: center;
+    font-weight: bold;
+}
+
+td.occuped {
+    position: relative;
+}
+
+.playboxBoxOfShips {
+    display: flex;
+    flex-wrap: wrap;
+    width: 360px;
+    height: 150px;
+    justify-content: space-around;
+    position: absolute;
+    top: 360px;
+    transition: 0.5s;
+}
+
+.ship {
+    width: 30px;
+    box-sizing: border-box;
+    border-radius: 18px 18px 8px 8px;
+    z-index: 2;
+    background-size: cover;
+    background-position: center center;
+    transform-origin: 50% 50%;
+    opacity: 0.55;
+}
+
+.ship1 {
+    height: 30px;
+    background-image: url(images/ship1.png);
+}
+
+.ship2 {
+    height: 60px;
+    background-image: url(images/ship2.png);
+}
+
+.ship3 {
+    height: 90px;
+    background-image: url(images/ship3.png);
+}
+
+.ship4 {
+    height: 120px;
+    background-image: url(images/ship4.png);
+}
+
+.readyShip {
+    transition-duration: 0.35s;
+    transition-timing-function: linear;
+    z-index: 3;
+    opacity: 0.7;
+}
+
+.activeShip {
+    transition-duration: 0.35s;
+    transition-timing-function: linear;
+    opacity: 1;
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.45));
+}
+
+.shipPositioner {
+    color: #112194;
+    text-shadow: 1px 1px 6px rgba(231, 177, 22, 1);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 45px;
+    border-radius: 18px;
+    outline-style: none;
+    width: 300px;
+    height: 120px;
+    border: 1px solid rgba(0, 44, 156, 0);
+    position: relative;
+    z-index: 3;
+    padding: 5px;
+    cursor: pointer;
+    background-image: url(images/sheepGlob.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.4)) hue-rotate(-50deg) grayscale(0.5);
+    animation: floating 4s linear 0s infinite;
+    user-select: none;
+}
+
+
+.shipPositioner:hover {
+    @media (hover: hover) {
+        transform: translate(-1px, -2px) scale(1.02);
+        filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.55)) hue-rotate(-50deg) grayscale(0.3);
+        animation: none;
+    }
+    
+}
+
+.playbox .pressedBut {
+    filter: hue-rotate(-50deg) grayscale(0.5);
+    transform: none;
+    animation: none;
+}
+
+.playbox .disactivatedBut {
+    filter: blur(1px) hue-rotate(-50deg) grayscale(0.8) contrast(0.6);
+    animation: none;
+    transform: none;
+}
+
+.shipPositioner:active {
+    border-style: solid;
+}
+
+.shipPositionerText {
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 25px;
+    text-align: center;
+}
+
+@keyframes floating {
+
+    0% {
+        transform: translate(0);
+    }
+
+    12.5% {
+        transform: translate(3px, -3px);
+    }
+
+    25% {
+        transform: translate(6px, 0px);
+    }
+
+    37.5% {
+        transform: translate(3px, 3px);
+    }
+
+    50% {
+        transform: translate(0px, 0px);
+    }
+
+    62.5% {
+        transform: translate(-3px, -3px);
+    }
+
+    75% {
+        transform: translate(-6px, 0px);
+    }
+
+    87.5% {
+        transform: translate(-3px, 3px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@media screen and (max-width: 798px) {
+    .descriptionText {
+        min-height: 2em;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .playbox {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .playboxBoxOfShips {
+        width: 345px;
+    }
+
+    .descriptionText {
+        min-height: 3em;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    @keyframes headLineTransform {
+        0% {
+            transform: scale(0.6) translateY(250px);
+            z-index: -1;
+            text-shadow: 1px 1px 5px #000000;
+        }
+
+        15% {
+            transform: scale(0.8) translateY(60px);
+            z-index: -1;
+        }
+
+        30% {
+            transform: scale(1) translateY(15px);
+            z-index: -1;
+        }
+
+        40% {
+            transform: scale(1.4) translateY(50px);
+            z-index: 8;
+        }
+
+        55% {
+            transform: scale(1.5, 1.8) translateY(110px);
+            z-index: 8;
+            text-shadow: 4px 4px 9px #000000;
+        }
+
+        70% {
+            transform: scale(1.5, 1.8) translateY(110px);
+            z-index: 8;
+            text-shadow: 4px 4px 9px #000000;
+        }
+
+        80% {
+            transform: scale(1.4) translateY(60px);
+            z-index: 8;
+        }
+
+        100% {
+            transform: scale(1) translateY(0px);
+            z-index: 3;
+        }
+    }
+}

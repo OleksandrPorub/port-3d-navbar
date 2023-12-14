@@ -1,0 +1,21 @@
+.articleSectionTextLi-enter {
+    opacity: 0;
+    transform: perspective(500px) rotateX(360deg) translateZ(-60px) scale(0.5, 0.2);
+}
+
+.articleSectionTextLi-enter-active {
+    opacity: 1;
+    transition: all 500ms ease-out;
+    transform: perspective(500px) rotateX(0deg) translateZ(0px) scale(1, 1);
+}
+
+.articleSectionTextLi-exit {
+    opacity: 1;
+    transform: perspective(500px) rotateX(0deg) translateZ(0px) scale(1, 1);
+}
+
+.articleSectionTextLi-exit-active {
+    opacity: 0;
+    transition: all 500ms ease-in;
+    transform: perspective(500px) rotateX(360deg) translateZ(-60px) scale(0.5, 0.2);
+}

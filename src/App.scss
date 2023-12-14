@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&family=Roboto+Slab:wght@300;400;500;700;900&display=swap');
+
+.App {
+    background-image: url(./images/bg/vintage-grunge-413.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 70px calc(30px - 40 * (1px - (100vw/1900))) 0 16%;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    @media screen and (max-width: 1150px) {
+        padding: 70px 0% 0% 0%;
+    }
+}
+
+main {
+    flex: 1 1 auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    padding: 3vh 2vw;
+    min-height: 100%;
+
+    @media screen and (max-width: 500px) {
+        padding: 2vh 0;
+    }
+}
+
+.pageHeadline {
+    --stroke_color: rgb(0, 26, 73);
+    display: inline-block;
+    width: fit-content;
+    color: #f0ab2c;
+    padding: 3px 4% 5px;
+    margin: 6px 0 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.09em;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6),
+        0 0 3px var(--stroke_color),
+        -1px -1px 1px var(--stroke_color),
+        1px -1px 1px var(--stroke_color),
+        -1px 1px 1px var(--stroke_color),
+        1px 1px 1px var(--stroke_color),
+        2px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 160px;
+    transform: translateX(20px);
+    animation: headDrifting 5s linear 0s infinite alternate;
+
+    @keyframes headDrifting {
+        0% {
+            transform: translateX(8px) translateY(0px);
+        }
+
+        30% {
+            transform: translateX(4px) translateY(4px);
+        }
+
+        70% {
+            transform: translateX(-4px) translateY(-4px);
+        }
+
+        100% {
+            transform: translateX(-8px) translateY(0px);
+        }
+    }
+}
+
+.h2-article {
+    margin-bottom: 40px;
+    font-size: 22px;
+    text-align: center;
+    color: #07317e;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+
+.article-sepia {
+    border-radius: 30px;
+    padding: 30px 3% 40px;
+    background: rgb(243, 226, 182);
+    box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.2), inset 0 0 35px 4px rgba(187, 135, 4, 0.65);
+}
+
+.pageMainText {
+    margin-bottom: 36px;
+    font-size: 23px;
+    text-align: center;
+    padding: 10px 1%;
+    font-weight: 900;
+    color: #07317e;
+    line-height: 1.2em;
+}

@@ -1,0 +1,287 @@
+.pageToDoList {
+    position: relative;
+    height: calc(100vh - 76px);
+    overflow: auto;
+    margin: 3px auto 0px;
+    width: 100%;
+    padding: 3px 1.5% 20px 0;
+
+    // tooltips
+    *[title] {
+        --toolt_L: initial;
+        --toolt_R: 20%;
+        --toolt_T: initial;
+        --toolt_B: calc(100% + 6px);
+
+        &::after {
+            content: attr(title);
+            position: absolute;
+            display: none;
+            top: var(--toolt_T);
+            bottom: var(--toolt_B);
+            left: var(--toolt_L);
+            right: var(--toolt_R);
+            background: #363636;
+            color: rgb(255, 229, 115);
+            font-size: 16px;
+            line-height: 1em;
+            padding: 6px 8px;
+            width: max-content;
+            min-height: 1em;
+            transition: opacity 0.5s 0.4s;
+            // opacity: 0;
+            // visibility: hidden;
+            pointer-events: none;
+            box-shadow: 0px 2px 4px 2px rgba(255, 255, 182, 0.45);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        &:hover {
+            @media (hover: hover) {
+                z-index: 2;
+                &::after {
+                    display: block;
+                    // opacity: 1;
+                    // visibility: visible;
+                }
+            }
+        }
+    }
+
+    .article {
+        min-width: 280px;
+        max-width: 800px;
+        margin: 0 auto;
+        transition: 0.5s;
+
+        &Title {
+            font-size: 40px;
+            margin-bottom: 0.3em;
+            text-align: center;
+            font-weight: 600;
+            color: rgb(204, 204, 204);
+
+            @supports (-webkit-text-stroke: 1px rgb(0, 0, 0)) {
+                font-weight: 900;
+                -webkit-text-stroke: 1.5px rgb(16, 27, 88);
+            }
+        }
+
+        &Section_Create {
+            background: rgba(92, 92, 92, 0.801);
+            margin-bottom: 14px;
+            padding: 10px calc(40px - 60 * (1px - (100%/800)));
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: sticky;
+            left: 0;
+            top: 0;
+            z-index: 2;
+
+            .otherOptions {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+                flex-wrap: wrap;
+
+                .addTasksButton {
+                    padding: 4px 7px;
+                    border: 2px solid rgba(255, 240, 213, 0.774);
+                    color: rgba(255, 240, 213, 0.774);
+                    background: #14549c;
+                    border-radius: 8px;
+                    font-size: 15px;
+                    width: max-content;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.05) translateY(-2px);
+                        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.596);
+                    }
+                }
+
+                .emptyTrashButton {
+                    padding: 2px 0 2px 4px;
+                    border: 2px solid rgba(255, 240, 213, 0.774);
+                    color: rgba(255, 240, 213, 0.774);
+                    background: #14549c;
+                    border-radius: 8px;
+                    font-size: 15px;
+                    width: max-content;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        min-width: max-content;
+                        // vertical-align: middle;
+                    }
+
+                    svg {
+                        width: 38px;
+                    }
+
+                    &:hover {
+                        transform: scale(1.05) translateY(-2px);
+                        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.596);
+                    }
+                }
+
+                .trashOnButton {
+                    padding: 4px;
+                    border: 2px solid rgba(255, 240, 213, 0.774);
+                    color: rgba(255, 240, 213, 0.774);
+                    font-size: 31px;
+                    border-radius: 8px;
+                    background: #14549c;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+
+                    svg {
+                        width: 1em;
+                        fill: currentColor;
+                        stroke: currentColor;
+                    }
+
+                    &:hover {
+                        transform: scale(1.05) translateY(-2px);
+                        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.596);
+                    }
+
+                    &.trashMode {
+                        background: rgb(230, 175, 26);
+                        border: 2px solid rgb(70, 46, 42);
+                        color: rgb(70, 46, 42);
+                    }
+                }
+            }
+
+            .filters {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+                flex-wrap: wrap;
+
+                select {
+                    width: max-content;
+                    height: 30px;
+                    border-radius: 12px;
+                    padding: 4px 6px;
+                    border: 1px solid rgba(255, 240, 213, 0.774);
+                    color: rgba(255, 240, 213, 0.774);
+                    background: #14549c;
+                }
+
+                .filterSearch {
+                    position: relative;
+
+                    .inputSearch {
+                        width: 180px;
+                        height: 30px;
+                        border-radius: 12px;
+                        padding: 2px 6px;
+                        border: 1px solid rgba(255, 240, 213, 0.774);
+                        color: rgba(255, 240, 213, 1);
+                        background: #14549c;
+                        font-size: 16px;
+                        letter-spacing: 0.04em;
+
+                        &::placeholder {
+                            color: rgba(255, 240, 213, 0.774);
+                        }
+
+                        &:focus::placeholder {
+                            color: rgba(255, 240, 213, 0.4);
+                        }
+                    }
+
+                    .buttonClear {
+                        position: absolute;
+                        right: 3px;
+                        top: calc((30px - 1.75em)/2);
+                        width: 1.5em;
+                        height: 1.75em;
+                        border-radius: 3px 45% 45% 3px;
+                        background-color: rgba(255, 255, 255, 0.8);
+                        cursor: pointer;
+                        opacity: 0.5;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            left: 3px;
+                            right: 3px;
+                            top: calc((100% - 2px)/2);
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            background-color: rgba(0, 0, 0, 0.9);
+                            transform: rotate(45deg);
+                        }
+
+                        &::after {
+                            position: absolute;
+                            left: 3px;
+                            right: 3px;
+                            top: calc((100% - 2px)/2);
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            background-color: rgba(0, 0, 0, 0.9);
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &Section_Tasks {
+            background: rgba(249, 252, 255, 0.192);
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 16px;
+            border-top: 6px solid #14549c;
+
+            &.trashMode {
+                background: rgba(235, 27, 89, 0.438);
+                border-top: 6px solid #d9a313;
+            }
+
+            h2 {
+                font-size: 26px;
+                text-shadow:
+                    0px 1px 1px rgba(255, 255, 255, 0.5),
+                    1px 0px 1px rgba(255, 255, 255, 0.5),
+                    -1px 0px 1px rgba(255, 255, 255, 0.5),
+                    0px -1px 1px rgba(255, 255, 255, 0.5),
+                ;
+            }
+
+            ul {
+                padding: 16px 3%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                transition: 0.5s;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        &SectionText {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 500;
+            color: rgb(95, 95, 95);
+        }
+    }
+}

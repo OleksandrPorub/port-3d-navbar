@@ -1,0 +1,99 @@
+.pageWithFormCustom {
+
+    .mainContent {
+        padding-top: 50px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.3em;
+        color: rgb(29, 26, 56);
+        transition: 0.5s;
+        background-color: #8892a07a;
+
+        .mainContent-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+
+            .showForm_button-wrapper {
+                position: fixed;
+                right: 25px;
+                top: 100px;
+
+                .showForm_button {
+                    padding: 22px 20px;
+                    background-color: #96bb84;
+                    text-transform: uppercase;
+                    border-radius: 8px;
+                    border: none;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    letter-spacing: 0.1em;
+                    color: black;
+                    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5),
+                        inset 0px 0px 1px 4px #96bb84,
+                        inset 0px 0px 1px 5.5px rgba(0, 0, 0, 0.692);
+                    cursor: pointer;
+                    opacity: 0.8;
+                    transition: 0.5s;
+                    transform-origin: top center;
+                    animation: buttonwait 2s linear 0s infinite;
+
+                    &:hover {
+                        transform: scale(1.05);
+                        opacity: 1;
+                        animation: none;
+                    }
+                }
+            }
+
+            article {
+                margin: 30px 0;
+
+                h2 {
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    color: rgb(196, 10, 10);
+                    letter-spacing: 0.06em;
+                    text-shadow:
+                        1px 0 2px rgba(0, 0, 0, 0.8),
+                        0 1px 2px rgba(0, 0, 0, 0.8),
+                        -1px 0 2px rgba(0, 0, 0, 0.8),
+                        0 -1px 2px rgba(0, 0, 0, 0.8), ;
+                    margin-bottom: 10px;
+                    padding-left: 15px;
+                }
+
+                p {
+                    display: inline-block;
+                    padding: 10px;
+                    border-radius: 18px;
+                    background-color: rgba(154, 211, 212, 0.801);
+                    border: 1px solid rgba(91, 125, 126, 0.829);
+                }
+            }
+        }
+    }
+
+    @keyframes buttonwait {
+        35% {
+            transform: scale(1);
+            box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5),
+                inset 0px 0px 1px 4px #96bb84,
+                inset 0px 0px 1px 5.5px rgba(0, 0, 0, 0.692);
+        }
+
+        50% {
+            transform: scale(1.06);
+            box-shadow: 0px 4px 15px 1px rgba(0, 0, 0, 0.5),
+                inset 0px 0px 1px 4px #96bb84,
+                inset 0px 0px 1px 5.5px rgba(0, 0, 0, 0.692);
+        }
+
+        65% {
+            transform: scale(1);
+            box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5),
+                inset 0px 0px 1px 4px #96bb84,
+                inset 0px 0px 1px 5.5px rgba(0, 0, 0, 0.692);
+        }
+    }
+}

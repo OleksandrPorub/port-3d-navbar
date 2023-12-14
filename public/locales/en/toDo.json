@@ -1,0 +1,36 @@
+{
+    "todo": {
+        "h1": "To Do List",
+        "options": {
+            "select": {
+                "all": "ALL",
+                "completed": "COMPLETED",
+                "notcompleted": "NOT COMPLETED"
+            },
+            "addFake_p1": "Add fake tasks",
+            "addFake_p2": "from a remote source",
+            "search": "search...",
+            "toolt-trash": "trash",
+            "toolt-main": "to the main list",
+            "placeholder": "new Task...",
+            "prompt-query": "How many tasks do you want to load?:",
+            "emptyTrash": "clean",
+            "toolt-emptyTrash": "empty the trash",
+            "confirm-q": "Do you want to delete forever all the tasks from the trash?",
+            "alert-phrase": "There is no any tasks in the trash!"
+        },
+        "h2_main": "Main",
+        "h2_trash": "Trash",
+
+        "inputTask": {
+            "updated": "Updated",
+            "toolt-input-compl": "completed",
+            "toolt-input-notcompl": "to be completed",
+            "toolt-return": "return up back",
+            "toolt-removeTo": "remove to trash",
+            "toolt-remove": "permanently delete",
+            "toolt-edit": "edit",
+            "toolt-save": "save"
+        }
+    }
+}

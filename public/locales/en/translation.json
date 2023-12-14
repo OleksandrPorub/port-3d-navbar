@@ -1,0 +1,118 @@
+{
+    "main": {
+        "header": {
+            "author": {
+                "firstName": {
+                    "first": "O",
+                    "others": "leksandr"
+                },
+                "lastName": {
+                    "first": "P",
+                    "others": "orubinovskyi"
+                }
+            },
+            "toolt-showMenu":"show menu",
+            "toolt-hideMenu":"hide menu"
+        },
+
+        "navbar": {
+            "header": "menu",
+            "home": "home",
+            "contacts": "contacts",
+            "about": "about",
+            "portfolios": "portfolios"
+        },
+
+        "pages": {
+            "home": {
+                "h1": "The site for presenting my portfolios and contacts",
+                "discription": "This site as a whole is worth looking at as a single large portfolio. But it also contains micro portfolios in the appropriate section. Some of them are made with React.js, the rest were written earlier in vanilla JS and included in the project. On the 'Contacts' page you will find many ways to contact me.",
+                "myWorks": {
+                    "1": "You can see my works there.",
+                    "2": "You can also find him in the appropriate section of the app."
+                }
+            },
+            "contacts": {
+                "h1": "My contacts",
+                "titleName": "name:",
+                "name": "Oleksandr Porubinovskyi",
+                "titleAdress": "adress:",
+                "adress": "Kyiv, Ukraine",
+                "titlePhone": "phone:",
+                "phone": "+38-067-395-56-78"
+            },
+            "about": {
+                "h1": "About me",
+                "intro": "Hello! I am a front-end developer. And a little back-end. I already have many skills, but of course there are more that I can`t do yet. But that’s why I love this profession, because It has a limitless field for growth and improvement. And I also like it because there’s a space for creativity.",
+                "howIcame": {
+                    "header": "How I came to IT",
+                    "p1": "I was fond of programming since my studying at school. And I had successes in this field. But, at that moment, the IT- industry wasn`t developed enough in Ukraine, so only true enthusiasts had the courage to be seriously engaged in programming. That’s why I worked in another field for a long time.",
+                    "p2": "After a few years, I realized that my understatement was not very appropriate for me, and I didn`t have the opportunity to realize my full potential. And it came the idea to do something that fascinated me once indeed. Moreover, now there is a steady demand for these skills. Friends said: «Do what you like - and succeed!»",
+                    "p3": "It took me a long time, but eventually, I found the opportunity and the courage to change my profession. Contrary to my fears that «I won't be able» I graduated from IT courses with distinction (the 1st place in the course!). I did not quit my previous job but continued to improve my skills in Front-End. Finally now, just like in my teenage years, I program with pleasure. At the moment, I finally decided to change activities and engage in Front-End development. I`m ready for further training and development."
+                },
+                "details": {
+                    "header": "Professional details (CV)",
+                    "skills": {
+                        "title": "Professional skills",
+                        "text": ""
+                    },
+                    "languages": {
+                        "title": "Languages",
+                        "text": {
+                            "1": "Ukrainian: Fluent,",
+                            "2": "Russian: Fluent,",
+                            "3": "English: Intermediate level"
+                        }
+                    },
+                    "education": {
+                        "title": "Education",
+                        "text": {
+                            "1": "2001 - Kyiv National University of Technologies and Design — Master’s Degree in Electromechanics —",
+                            "2": "graduated with distinction",
+                            "3": "2007 - State Higher Educational Institution Kyiv National Economic University named after Vadym Hetman — Specialist’s Degree in Finance"
+                        }
+                    },
+                    "addEducation": {
+                        "title": "Additional Education",
+                        "text": {
+                            "1": "2020 - Hillel IT School, course Front-End Pro —",
+                            "2": "graduated with distinction"
+                        }
+                    },
+                    "lastJob": {
+                        "title": "Previous job (not IT industry)",
+                        "text": {
+                            "1": "Company: “ENKO” Ltd - commercial firm selling equipment for energy distribution companies of Ukraine.",
+                            "2": "Responsibilities: searching for necessary products, selling equipment, execution of contracts, preparation of tender documentation, accounting documents, logistics."
+                        }
+                    },
+                    "experience": {
+                        "title": "Experience",
+                        "text": {
+                            "1": "I have 3 years of experience in writing code and HTML layout. I constantly study new materials and don`t stop improving my existing skills. I have impressive experience in my previous job, where I have acquired the skills of teamwork, communication with clients, paperwork, and many others."
+                        }
+                    },
+                    "addInfo": {
+                        "title": "Additional information",
+                        "text": {
+                            "1": "I have a high ability to study, as evidenced by the achievements listed above. I want to create interesting things and to be a part of a good team. These qualities will make a significant contribution to the success and growth of your company. I will make every effort to make this happen."
+                        }
+                    },
+                    "download": {
+                        "1":"download",
+                        "2":"CV"
+                    }
+                }
+            },
+            "portfolios": {
+                "h1": "My Portfolios",
+                "MyWorkLink": {
+                    "go": "go"
+                },
+                "MyWorkCard": {
+                    "go": "go"
+                }
+            }
+        }
+    }
+}

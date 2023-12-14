@@ -1,0 +1,111 @@
+.pageContacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__content {
+        min-height: 100%;
+        width: 100%;
+        padding: 20px 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border-radius: 5px;
+
+        .pageHeadline {
+            --bg_color: rgba(255, 255, 255, 0.45);
+            background: var(--bg_color);
+            box-shadow: 0 0 15px 15px var(--bg_color);
+            margin-bottom: 8vh;
+        }
+
+        .article {
+            width: 100%;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            align-items: center;
+            max-width: max-content;
+            border-radius: 4px;
+            padding: 40px 3.8% 40px;
+            background: rgb(238, 219, 172);
+            box-shadow: 0 8px 45px 5px rgba(0, 0, 0, 0.7), inset 0 0 35px 4px rgba(187, 135, 4, 0.65);
+
+            .mainInfo {
+                font-family: 'Roboto';
+                font-size: 19px;
+                font-weight: 700;
+                gap: 15px;
+                display: flex;
+                flex-direction: column;
+
+                .mainInfo_item {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    row-gap: 3px;
+
+                    @media screen and (max-width: 780px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    &_title {
+                        background: rgba(255, 255, 255, 0.7);
+                        display: inline-block;
+                        line-height: 1.2;
+                        color: rgb(8, 71, 155);
+                        padding: 2px 5px 4px;
+                        border-radius: 6px;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        svg {
+                            width: 1em;
+                            fill: currentColor;
+                            stroke: currentColor;
+                        }
+                    }
+
+                    &_text {
+                        display: flex;
+                        align-items: center;
+                        gap: 19px;
+                        row-gap: 5px;
+                        font-size: 0.96em;
+                        flex-wrap: wrap;
+                        font-weight: 500;
+
+                        .logosBlock {
+                            display: flex;
+                            gap: 10px;
+                        }
+
+                        a {
+                            padding: 0;
+                            border-radius: 5px;
+
+                            &:hover {
+                                outline: 3px solid rgba(4, 72, 160, 0.438);
+                                outline-offset: 1px;
+                                cursor: pointer;
+                                color: rgb(0, 60, 138);
+                            }
+
+                            &.logo {
+                                line-height: 0;
+
+                                img {
+                                    width: 29px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

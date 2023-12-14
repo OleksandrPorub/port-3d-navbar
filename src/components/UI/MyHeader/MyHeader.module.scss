@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+.header {
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+
+  padding: 4px 2%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3vw;
+  align-items: center;
+  background-color: rgba(14, 15, 71, 0.6);
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 5;
+  font-size: 32px;
+
+  &__menuButton {
+    position: relative;
+    width: 60px;
+    height: 40px;
+    border-radius: 4px;
+    background: rgb(226, 197, 101);
+    padding: 0 4px 4px;
+    transition: 0.2s;
+    cursor: pointer;
+    box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.6);
+
+    
+      &:hover {
+        @media (hover:hover) {
+        background: rgb(255, 200, 18);
+  
+        span {
+          left: 15%;
+          right: 15%;
+        }
+      }
+    }
+ 
+
+    span {
+      position: absolute;
+      left: 26%;
+      right: 26%;
+      height: 3px;
+      background: rgb(2, 22, 133);
+      transition: 0.2s;
+      transform-origin: center center;
+      border-radius: 2px;
+
+      &:nth-child(1) {
+        top: 20%;
+      }
+
+      &:nth-child(2) {
+        bottom: 20%;
+      }
+
+      &:nth-child(3) {
+        top: calc(50% - 1.5px);
+      }
+    }
+
+    &.menuOff {
+      span {
+        left: 22%;
+        right: 22%;
+
+        &:nth-child(1) {
+          top: calc(50% - 1.5px);
+          transform: rotate(140deg);
+        }
+
+        &:nth-child(2) {
+          bottom: calc(50% - 1.5px);
+          transform: rotate(-140deg);
+        }
+
+        &:nth-child(3) {
+          left: 50%;
+          right: 50%;
+          opacity: 0;
+        }
+      }
+
+      &:hover {
+        span {
+          left: 16%;
+          right: 16%;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    text-align: center;
+    text-shadow: 0 0 6px black;
+    line-height: 1em;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    transform: scaleY(0.75);
+
+    &_tallLetter {
+      font-size: 1.08em;
+    }
+
+    &:hover {
+      color: rgb(255, 217, 0);
+      font-size: 1.04em;
+    }
+  }
+
+  &__flag {
+    width: 60px;
+    line-height: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}

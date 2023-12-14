@@ -1,0 +1,162 @@
+.pageAbout {
+    padding: 4vh 3vw;
+
+    &__content {
+        min-height: 100%;
+        padding: 20px 1.5%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 5px;
+        color: rgb(7, 49, 126);
+        font-weight: 600;
+        background: rgba(255, 247, 231, 0.65);
+        box-shadow: 0 0 25px 25px rgba(255, 247, 231, 0.65);
+
+        .pageAbout__header {
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            &_headline {
+                
+            }
+
+            &_foto {
+                --sizeFoto: 500px;
+                --aspectRatio: calc(500/360);
+                width: var(--sizeFoto);
+                aspect-ratio: var(--aspectRatio);
+                line-height: 0;
+                position: relative;           
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+        }
+
+        .text {}
+
+        .article {
+
+            h2 {}
+
+            &_howICame {
+                p {
+                    text-indent: 30px;
+                    margin-bottom: 6px;
+                    font-size: 18px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &_details {
+                h2 {
+                    margin-bottom: 50px;
+                    font-weight: 700;
+                }
+            }
+
+            .skills {
+                text-indent: initial;
+
+                .highlightedRed {
+                    color: rgb(207, 0, 79);
+                    line-height: 1.5em;
+                }
+
+                .skills_icon {
+                    margin-right: 0.2em;
+                    width: 1.5em;
+                    position: relative;
+                    bottom: calc(0.5em - 1.5em/2);
+                }
+
+                .skills_item {
+                    position: relative;
+                    margin-left: 1.6em;
+                    display: inline-block;
+                    line-height: 1.7em;
+
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        width: 1.6em;
+                        height: 1.6em;
+                        background-image: var(--bgImage);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        position: absolute;
+                        left: calc(0em - 1.6em);
+                        bottom: calc((1.7em - 1.5em)/2);
+                    }
+                }
+            }
+
+
+            &__downloadCV {
+                display: block;
+                padding: 3px 5px;
+                border: 2px solid #264580;
+                width: max-content;
+                align-self: center;
+                background: rgb(255, 234, 113);
+                color: #264580;
+                font-weight: 700;
+                transition: 0.1s;
+                box-shadow: 0 9px 5px -4px rgba(0, 0, 0, 0.3);
+                animation: buttonattention 3.5s linear infinite;
+                margin: 6px auto;
+
+                &:hover {
+                    background: #264580;
+                    color: rgb(255, 234, 113);
+                }
+
+                @keyframes buttonattention {
+                    0% {
+                        transform: none;
+                        box-shadow: 0 9px 5px -4px rgba(0, 0, 0, 0.3);
+                    }
+
+                    2% {
+                        transform: translate(-8px, -2px) scale(1.1);
+                    }
+
+                    4% {
+                        transform: translate(7px, -4px) scale(1.15);
+                        box-shadow: 0 11px 10px -2px rgba(0, 0, 0, 0.3);
+                    }
+
+                    6% {
+                        transform: translate(-6px, -3px) scale(1.15);
+                        box-shadow: 0 11px 10px -2px rgba(0, 0, 0, 0.3);
+                    }
+
+                    8% {
+                        transform: translate(4px, -1px) scale(1.1);
+                    }
+
+                    10% {
+                        transform: translate(-3px, 0px) scale(1.05);
+                    }
+
+                    12% {
+                        transform: none;
+                        box-shadow: 0 9px 5px -4px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}

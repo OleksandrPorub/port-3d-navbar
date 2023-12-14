@@ -1,0 +1,28 @@
+swiper-container {
+  height: 100%;
+  --swiper-theme-color: #07317e;
+}
+
+swiper-container::part(container) {
+  box-sizing: border-box; 
+  padding-bottom: 28px; 
+}
+
+swiper-container::part(button-next),
+swiper-container::part(button-prev) {
+
+  padding: 30px 12px;
+  opacity: 0.2;
+  margin-top: -40px;
+
+  &:hover {
+    @media (hover: hover) {
+      background: #ffffff59;
+      opacity: 1;
+    }
+  }
+
+}
+
+
+swiper-container::part(button-next) {}

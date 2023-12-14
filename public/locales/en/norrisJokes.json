@@ -1,0 +1,22 @@
+{
+    "norris_jokes": {
+        "main": {
+            "hey": "Hey!",
+            "lets": "Let’s try to find a joke for you!:",
+            "get_joke": "Get a joke",
+            "favourite": "Favourite"
+        },
+        "options": {
+            "random": "Random",
+            "categories": "From categories:",
+            "search": "Search",
+            "placeholder": "Free text search..."
+        },
+        "popupText": {
+            "uses": "This app uses the API from",
+            "href": "https://api.chucknorris.io/",
+            "also": "and generates jokes of Chuck Norris :) . You also can save some jokes in 'Favourites'.",
+            "close": "Click anywhere to close"
+        }
+    }
+}
