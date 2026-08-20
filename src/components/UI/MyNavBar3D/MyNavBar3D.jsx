@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import cl from "./MyNavBar3D.module.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -12,33 +12,30 @@ const MyNavBar3D = ({ items, isActive, setIsActive, isScreenLess_730 }) => {
      //the function for chosing the text for current language
      const { t } = useTranslation();
 
-    useEffect(() => {
-        liActivator(itemActiveName);
-    }, [isNavBarMoving]);
-
-    useEffect(() => {
-        const elmentsOfNavBar = ulRef.current.querySelectorAll("li");
-        setElementsAnimated(0);
-
-        setIsNavBarMoving(true);
-        elmentsOfNavBar.forEach((elem) => {
-            elem.classList && elem.classList.remove(cl.active);
-        });
-    }, [isActive]);
-
-    useEffect(() => {
-        liActivator(itemActiveName);
-    }, [itemActiveName]);
-
-    function liActivator(name) {
+    const liActivator = useCallback((name) => {
         if (!isNavBarMoving) {
-            const elmentsOfNavBar = ulRef.current.querySelectorAll("li");
-            elmentsOfNavBar.forEach((item) => {
+            const elementsOfNavBar = ulRef.current.querySelectorAll("li");
+            elementsOfNavBar.forEach((item) => {
                 item.classList && item.classList.remove(cl.active);
                 item.dataset.name === name && item.classList.add(cl.active);
             });
         }
-    }
+    }, [isNavBarMoving]);
+
+    useEffect(() => {
+        liActivator(itemActiveName);
+    }, [isNavBarMoving, itemActiveName, liActivator]);
+
+    useEffect(() => {
+        const elementsOfNavBar = ulRef.current.querySelectorAll("li");
+        setElementsAnimated(0);
+
+        setIsNavBarMoving(true);
+        elementsOfNavBar.forEach((elem) => {
+            elem.classList && elem.classList.remove(cl.active);
+        });
+    }, [isActive]);
+ 
 
     const [elementsAnimated, setElementsAnimated] = useState(0);
 
@@ -54,7 +51,7 @@ const MyNavBar3D = ({ items, isActive, setIsActive, isScreenLess_730 }) => {
         if (elementsAnimated === items.length) {
             setIsNavBarMoving(false);
         }
-    }, [elementsAnimated]);
+    }, [elementsAnimated, items.length]);
 
     return (
         <nav
