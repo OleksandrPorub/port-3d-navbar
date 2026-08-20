@@ -47,7 +47,6 @@ export default function SliderComp() {
     useEffect(() => {
         const swiperElement = document.querySelector('swiper-container');
         setSwiperInstance(swiperElement);
-        console.log(swiperElement);
         Object.assign(swiperElement, swiperParams);
         swiperElement.initialize();
         swiperElement.addEventListener('slidechange', (event) => {

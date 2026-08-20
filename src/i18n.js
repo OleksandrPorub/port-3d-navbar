@@ -9,7 +9,7 @@ i18n
   .init({
     debug: true,
     fallbackLng: 'en',
-    ns: ['translation', 'norrisJokes', 'toDo'],
+    ns: ['translation', 'norrisJokes', 'toDo', 'battleShip'],
     defaultNS: 'translation'
 
   });

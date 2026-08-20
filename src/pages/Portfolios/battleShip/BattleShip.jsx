@@ -3,8 +3,17 @@ import React, { useEffect } from "react";
 import BgEffectBubbles from "../../../components/BgEffectBubbles/BgEffectBubbles";
 // css
 import "./styles.scss";
+//localisation
+import { useTranslation } from "react-i18next";
 
 const BattleShip = () => {
+
+     //the function for chosing the text for current language
+    const { t } = useTranslation();
+     const tns = function () {
+        return t(...arguments, { ns: 'battleShip' });
+    }
+
     function initialization() {
         typingString(".descriptionText", 60, 2600);
 
@@ -313,8 +322,8 @@ const BattleShip = () => {
     return (        
         <div className="page pageBattleShip">
             <BgEffectBubbles/>
-            <h1>battle area</h1>
-            <p className="descriptionText">This app arranges the ships at random order an unlimited number of times</p>
+            <h1>{tns("h1", "To Do List Заглушка")}</h1>
+            <p className="descriptionText">{tns("discription", "This app arranges the ships at random order an unlimited number of times")}</p>
             <div className="playboxWrap">
                 <div className="playbox">
                     <table className="battleAreaWrap">
@@ -503,7 +512,7 @@ const BattleShip = () => {
                         <div className="ship ship1"></div>
                     </div>
                     <div className="shipPositioner">
-                        <span className="shipPositionerText">arrange the ships</span>
+                        <span className="shipPositionerText">{tns("buttonText", "arrange the ships")}</span>
                     </div>
                 </div>
             </div>
